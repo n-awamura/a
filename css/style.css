@@ -38,10 +38,20 @@ body {
 
 /* ヘッダー固定用のスタイル */
 .sticky-header {
-    position: sticky; /* stickyに変更 */
-    top: 0;        /* 上端に配置 */
-    z-index: 1000;  /* 他の要素より前面に */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: var(--light-blue-gray); /* bodyに背景色があるなら不要 */
+}
+
+/* ヘッダー固定用のスタイル */
+.fixed-header {
+    position: fixed; /* 固定 */
+    top: 0;        /* 上端に配置 */
+    left: 0;       /* 左端に配置 */
+    width: 100%;    /* 幅を100%に */
+    z-index: 1000;  /* 他の要素より前面に */
+    background-color: var(--light-blue-gray); /* 必要に応じて背景色を設定 */
 }
 
 /* ナビゲーション */
@@ -81,12 +91,12 @@ main {
 .main-image {
     max-height: 40px;
     width: auto;
-    animation-play-state: running;
-    display: block; /* インライン要素からブロック要素に変更 */
-    margin-bottom: 0.5rem; /* 必要に応じて、画像の下に余白を追加 */
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .main-text {
+    margin-top:150px;
     font-family: var(--font-family-noto-sans-jp);
     color: var(--main-text-color);
 }
@@ -95,40 +105,40 @@ main {
     background-color: var(--very-light-blue-gray);
 }
 
+/* リンク (main.main-text 内) */
 main.main-text a {
-    /* main.main-text 内の a タグに適用 */
     color: var(--main-text-color);
-    /* 通常の文字色と同じにする */
     text-decoration: none;
-    /* 下線を消す (必要に応じて) */
 }
 
 main.main-text a:hover {
-    /* ホバー時のスタイル (オプション) */
     color: var(--link-hover-color);
-    /* ホバー時の色 (例) */
     text-decoration: underline;
-    /* ホバー時に下線 (オプション) */
 }
-
 
 .profile-image {
     max-height: 110px;
     width: auto;
 }
 
-/* 新しいスタイル */
-.section-bg {
-    background-color: #f0f0f0;
-    /* 必要に応じて色を変更 */
+.section-bg{
+    background-color: var(--heading-bg-color);
 }
-/* メインコンテンツの上部マージンは不要に */
-body > main.main-text {
-  margin-top: 3rem;
+
+/* セクションヘッダー (共通スタイル) */
+.section-bg .row {
+    display: flex;
+    align-items: center; /* 垂直方向中央揃え */   
 }
+
+.section-bg .col-sm-10.col-md-11 {
+    display: flex; /* h2要素を中央揃えにするため */
+    align-items: center;
+}
+
 /* フッター */
 .footer {
-   /* padding-bottom: 200px;削除 */
+    /* padding-bottom: 200px; (削除) */
 }
 
 .footer-border-top {
@@ -142,6 +152,7 @@ body > main.main-text {
 
 /* アニメーション */
 @keyframes shake {
+    /* (省略: 前と同じ) */
     0% {
         transform: translate(1px, 1px) rotate(0deg);
     }
@@ -190,56 +201,51 @@ body > main.main-text {
 .shake {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
-    animation-play-state: running;
-    /* アニメーションを実行 */
 }
 
-/*職歴*/
+/* 職歴 */
 .work-experience-item {
-  border-bottom: 1px solid #dee2e6; /* 行の間の区切り線 */
-  padding-top: 0.5rem; /* 見やすいようにパディングを追加 */
-  padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-/* 最初の要素の上にはborderをつけない */
 .work-experience-item:first-child {
     border-top: none;
 }
 
 .work-experience-term {
-    font-weight: bold; /* 期間は太字 */
+    font-weight: bold;
 }
 
-/* レスポンシブ対応 (小さい画面では縦並び) */
-@media (max-width: 767px) { /* Bootstrapの sm ブレークポイント (例) */
-  .section-header .row {
-      flex-direction: column; /* 列を縦並びにする */
-      align-items: center; /* 中央揃え */
-  }
-  .work-experience-item {
-    flex-direction: column;
-  }
-  .work-experience-term{
-    width: 100%;
-  }
-  .work-experience-details{
-    width: 100%;
-  }
+/* レスポンシブ対応 (小さい画面) */
+@media (max-width: 767px) {
+    .section-header .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .work-experience-item {
+        flex-direction: column;
+    }
+    .work-experience-term{
+        width: 100%;
+    }
+    .work-experience-details{
+        width: 100%;
+    }
 }
-/* life.html */
+
+/* life.html (必要であれば) */
 .life-image {
-    max-width: 100%; /* 親要素の幅を超えるのを防ぐ */
-    height: auto;  /* 縦横比を維持 */
-    display: block; /* インライン要素ではなく、ブロック要素にする (必要に応じて) */
-    margin-left: auto; /* 中央揃え (必要に応じて) */
-    margin-right: auto; /* 中央揃え (必要に応じて) */
-    /* その他の共通スタイル (例: border, border-radius, box-shadow など) */
-}
-/* 個別の画像に特定のスタイルが必要な場合 (例) */
-#jtnc-image {
-    /* max-width: 300px;  特定の最大幅を設定する場合 */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#ichihara-image {
-    /* max-width: 400px; */
-}
+/* 個別の画像スタイル (必要に応じて) */
+/*
+#jtnc-image { }
+#ichihara-image { }
+*/
