@@ -38,13 +38,10 @@ body {
 
 /* ヘッダー固定用のスタイル */
 .sticky-header {
-    position: sticky; /* stickyに変更
+    position: sticky; /* stickyに変更 */
     top: 0;        /* 上端に配置 */
-    /* left: 0;       leftは不要 */
-    /* width: 100%;    widthは不要 */
     z-index: 1000;  /* 他の要素より前面に */
     background-color: var(--light-blue-gray); /* bodyに背景色があるなら不要 */
-    /* border-bottom: はheader-border-bottomで指定済み*/
 }
 
 /* ナビゲーション */
@@ -228,4 +225,21 @@ body > main.main-text {
   .work-experience-details{
     width: 100%;
   }
+}
+/* life.html */
+.life-image {
+    max-width: 100%; /* 親要素の幅を超えるのを防ぐ */
+    height: auto;  /* 縦横比を維持 */
+    display: block; /* インライン要素ではなく、ブロック要素にする (必要に応じて) */
+    margin-left: auto; /* 中央揃え (必要に応じて) */
+    margin-right: auto; /* 中央揃え (必要に応じて) */
+    /* その他の共通スタイル (例: border, border-radius, box-shadow など) */
+}
+/* 個別の画像に特定のスタイルが必要な場合 (例) */
+#jtnc-image {
+    /* max-width: 300px;  特定の最大幅を設定する場合 */
+}
+
+#ichihara-image {
+    /* max-width: 400px; */
 }
