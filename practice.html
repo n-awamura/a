@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norihisa Awamura's Website</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<style>
+    /* CSS変数の定義 */
+    :root {
+        --main-text-color: #324454;
+        --link-color: #526D82;
+        --link-hover-color: #4682B4;
+        --active-link-bg-color: #4682B4;
+        --active-link-text-color: #fff;
+        --light-blue-gray: #d8dbe0;
+        --very-light-blue-gray: #f0f4f8;
+        --heading-bg-color: #e6e9ed;
+        --border-color: #94a9b8;
+        --font-family-montserrat: "Montserrat", sans-serif;
+        --font-family-noto-sans-jp: "Noto Sans JP", sans-serif;
+    }
+
+    /* 全体設定 */
+    body {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    /* ヘッダー */
+    .bg-light-blue-gray {
+        background-color: var(--light-blue-gray);
+    }
+
+    .header-border-bottom {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-image {
+        max-height: 80px;
+        width: auto;
+    }
+
+    /* ナビゲーション */
+    .nav-pills {
+        display: flex;
+        list-style: none;
+        margin-left: 0; /* コンテナを使うので不要 */
+        padding-left: 0;
+    }
+
+    .nav-link {
+        color: var(--link-color);
+        font-family: var(--font-family-montserrat);
+        text-decoration: none;
+    }
+    /* Bootstrapのアイコンサイズ調整 */
+     .nav-link .bi {
+        font-size: 1.25rem;
+        vertical-align: -0.125em;
+    }
+
+    .nav-link:hover {
+        color: var(--link-hover-color);
+    }
+
+    .nav-link.active {
+        background-color: var(--active-link-bg-color);
+        color: var(--active-link-text-color);
+    }
+
+    /* メインコンテンツ */
+    .main-image {
+        max-height: 40px;
+        width: auto;
+    }
+
+    .main-section-heading-wrapper {
+        background-color: var(--heading-bg-color);
+        color: var(--link-color);
+        margin-bottom: 20px;
+    }
+
+    .main-section-text-wrapper {
+        color: var(--main-text-color);
+        margin-bottom: 40px;
+    }
+
+    .main-text {
+        font-family: var(--font-family-noto-sans-jp);
+    }
+     .bg-very-light-blue-gray {
+            background-color: var(--very-light-blue-gray);
+        }
+
+
+    .profile-image {
+        max-height: 110px;
+        width: auto;
+    }
+
+    /* フッター */
+    .footer {
+        padding-bottom: 200px;
+    }
+
+    .footer-border-top {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .footer-text {
+        color: var(--link-color);
+        font-family: var(--font-family-montserrat);
+    }
+
+    /* アニメーション */
+    @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+
+    .shake {
+        animation: shake 0.5s;
+        animation-iteration-count: 1;
+        animation-play-state: running; /* アニメーションを実行 */
+    }
+    /* 初期状態ではアニメーションを停止（JSで制御）*/
+    img {
+        animation-play-state: paused;
+    }
+</style>
+</head>
+<body>    
+    <header class="py-2 bg-light-blue-gray header-border-bottom mb-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <nav>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <img id="myImage" src="img/header_elephant_fuku.png" alt="shaking elephant symbol" class="img-fluid header-image">
+            </div>
+        </div>
+    </header>
+    <main class="main-text">      
+        <!-- 1セクションここから -->           
+        <div class="main-section-text-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <p id="line1"></p>
+                        <p id="line2"></p>
+                        <p id="line3"></p>                     
+                    </div>
+                    <div class="col-4 text-center">
+                        <img src="img/awa.png" alt="awa" class="profile-image">
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+        <!-- 1セクションここまで -->
+        <!-- 1セクションここから -->
+            <div class="main-section-heading-wrapper">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-1">
+                            <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                        </div>
+                        <div class="col-11 pt-1">
+                            <h2>職歴</h2>
+                        </div>
+                    </div>                
+                </div>
+            </div>        
+            <div class="main-section-text-wrapper">
+                <div class="container">
+                    <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                </div>
+            </div>
+        <!-- 1セクションここまで -->
+         <!-- 1セクションここから -->
+        <div class="main-section-heading-wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                    </div>
+                    <div class="col-11 pt-1">
+                        <h2>特長</h2>
+                    </div>
+                </div>                
+            </div>
+        </div>        
+        <div class="main-section-text-wrapper">
+            <div class="container">
+                <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            </div>
+        </div>
+        <!-- 1セクションここまで -->
+         <!-- 1セクションここから -->
+        <div class="main-section-heading-wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                    </div>
+                    <div class="col-11 pt-1">
+                        <h2>近年の記事・登壇など</h2>
+                    </div>
+                </div>                
+            </div>
+        </div>        
+        <div class="main-section-text-wrapper">
+            <div class="container">
+                <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            </div>
+        </div>
+        <!-- 1セクションここまで -->
+         <!-- 1セクションここから -->
+        <div class="main-section-heading-wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                    </div>
+                    <div class="col-11 pt-1">
+                        <h2>副業</h2>
+                    </div>
+                </div>                
+            </div>
+        </div>        
+        <div class="main-section-text-wrapper">
+            <div class="container">
+                <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+            </div>
+        </div>
+        <!-- 1セクションここまで -->
+        
+    </main>
+
+    <footer class="bg-light-blue-gray py-4 footer-border-top">
+        <div class="container footer-text footer">
+            &copy; 2025 Norihisa Awamura
+        </div>
+    </footer>
+
+    <script>
+        // TextAnimator クラス
+        class TextAnimator {
+            constructor(element, text, interval = 50) { // デフォルトを50msに
+                this.element = element;
+                this.text = text;
+                this.interval = interval;
+                this.index = 0;
+                this.intervalId = null;
+                this.isRunning = false;
+                this.isComplete = false; // 追加: 完了フラグ
+                TextAnimator.activeAnimators.push(this); //アクティブなアニメーターのリストに追加
+            }
+    
+            start() {
+                if (!this.isRunning) {
+                    this.isRunning = true;
+                    this.intervalId = setInterval(() => {
+                        this.displayNextCharacter();
+                    }, this.interval);
+                }
+            }
+    
+            pause() {
+                if (this.isRunning) {
+                    this.isRunning = false;
+                    clearInterval(this.intervalId);
+                }
+            }
+    
+            resume() {
+                this.start();
+            }
+    
+            displayNextCharacter() {
+                if (this.index < this.text.length) {
+                    this.element.textContent += this.text[this.index];
+                    this.index++;
+                } else {
+                    if (!this.isComplete) { // 完了処理は一度だけ行う
+                        this.isComplete = true;
+                        this.pause();
+                        TextAnimator.checkAllComplete(); // 全て完了したかチェック
+                    }
+                }
+            }
+    
+            changeSpeed(newInterval) {
+                this.interval = newInterval;
+                if (this.isRunning) {
+                    this.pause();
+                    this.start();
+                }
+            }
+        }
+        // static プロパティとメソッドを追加（クラス全体の変数、関数）
+        TextAnimator.activeAnimators = []; // 動作中の TextAnimator インスタンスを保持する配列
+        TextAnimator.checkAllComplete = () => {
+            // 全てのアニメーターが完了しているかチェック
+            if (TextAnimator.activeAnimators.every(animator => animator.isComplete)) {
+                //console.log("全てのアニメーションが完了しました。"); // 全て完了したら何か処理
+                // 全て完了した場合の処理（例：ボタンを有効にするなど）をここに追加
+    
+                // 必要に応じて、activeAnimatorsをクリアする
+                TextAnimator.activeAnimators = [];
+            }
+        };
+    
+    
+        // DOMContentLoaded イベントリスナー (ページ読み込み完了後に実行)
+        document.addEventListener("DOMContentLoaded", function() {
+    
+            // ナビゲーションのアクティブ化
+            const navLinks = document.querySelectorAll('.nav-pills .nav-link');
+            const currentPath = window.location.pathname;
+    
+            navLinks.forEach(link => {
+                if (currentPath.startsWith(link.getAttribute('href'))) {
+                    link.classList.add('active');
+                }
+            });
+    
+    
+            // テキストアニメーションの設定
+            const lines = [
+                "こんにちは、粟村倫久(あわむらのりひさ)、a.k.a awaです。",
+                "Hello, I am Norihisa Awamura, a.k.a awa. ",
+                "你好，我叫粟村倫久，a.k.a awa。"
+            ];
+    
+            const line1Element = document.getElementById("line1");
+            const line2Element = document.getElementById("line2");
+            const line3Element = document.getElementById("line3");
+    
+            // null チェックを追加
+            if (!line1Element || !line2Element || !line3Element) {
+                console.error("必要な要素が見つかりません。");
+                // 以降の処理を停止
+                throw new Error("必要な要素が見つかりません。");
+            }
+    
+            const animator1 = new TextAnimator(line1Element, lines[0], 35); // 全て50ms間隔
+            const animator2 = new TextAnimator(line2Element, lines[1], 30);
+            const animator3 = new TextAnimator(line3Element, lines[2], 70);
+    
+    
+            // 各アニメーターを同時にスタート
+            animator1.start();
+            animator2.start();
+            animator3.start();
+    
+    
+            // 画像揺れアニメーションの設定
+            const imageElement = document.getElementById("myImage");
+    
+            // null チェック
+            if (!imageElement) {
+                console.error("ID 'myImage' を持つ要素が見つかりません。");
+            } else {
+    
+                function shakeImage() {
+                    imageElement.classList.add("shake"); // クラスを追加してアニメーション開始
+    
+                    // アニメーション終了後にクラスを除去 (0.5秒後)
+                    setTimeout(() => {
+                        imageElement.classList.remove("shake");
+                    }, 500); // 0.5秒後 (CSSのアニメーション時間と合わせる)
+                }
+    
+                // 30秒ごとに実行
+                setInterval(shakeImage, 20000); // 30000ミリ秒 = 30秒
+                // shakeImage();  テスト用。ロード後すぐに揺らす場合はコメントを外す。
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,28 +1,266 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demoa</title>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norihisa Awamura's Website</title>    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Library</li>
-      </ol>
-    </nav>
-    <h1>Hello, world!</h1>
-    <button type="button" class="btn btn-outline-primary">ボタン</button>
-    <button type="button" class="btn btn-outline-primary btn-lg">ボタン</button>
-    <div class="alert alert-primary" role="alert">
-      A simple primary alert—check it out!
-    </div>
+</head>
+<body>    
+    <div id="header-container"></div>
+    <main class="main-text">
+        <section class="introduction mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <p id="line1"></p>
+                        <p id="line2"></p>
+                        <p id="line3"></p>
+                    </div>
+                    <div class="col-4 text-center">
+                        <img src="img/awa.png" alt="awa" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-  </body>
+        <section class="contact-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>連絡先</h2>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="contact-content mb-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                    <p>ご連絡は以下のいずれかからお願いいたします🙏<br/>上から順に頻度高く見ています。</p>
+                    <ul>
+                        <li><a href="https://x.com/n_awamura" target="_blank" rel="noopener noreferrer">X(Twitter)のDM</a></li>
+                        <li><a href="https://www.linkedin.com/in/%E5%80%AB%E4%B9%85-%E7%B2%9F%E6%9D%91-7039b9b0/" target="_blank" rel="noopener noreferrer">LinkedInのDM</a></li>
+                        <li><a href="https://www.facebook.com/norihisa.awamura/" target="_blank" rel="noopener noreferrer">FacebookのDM</a></li>                      
+                    </ul>       
+                  </div>
+              </div>
+          </div>
+      </section>      
+  
+      <section class="work-experience-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>職歴</h2>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="work-experience-content">
+        <div class="container">
+            <div class="work-experience-list">
+                <div class="row work-experience-item">
+                    <p class="pt-1 pb-1">一番上が現職です。</p>
+                    
+                    </div>
+                </div>             
+              <div class="row work-experience-item">
+                <div class="col-4 work-experience-details">2024年3月 - </div>
+                <div class="col-8 work-experience-details">
+                    <a href="https://ubie.life/" target="_blank" rel="noopener noreferrer">Ubie株式会社</a><br>プロダクトプラットフォーム<br>デザインリサーチャー
+                </div>
+              </div>
+          
+              <div class="row work-experience-item">
+                <div class="col-4 work-experience-details">2021年6月 - 2024年2月</div>
+                <div class="col-8 work-experience-details">
+                    <a href="https://corp.freee.co.jp/" target="_blank" rel="noopener noreferrer">フリー株式会社</a><br>デザイン事業本部<br>エクスペリエンスデザイナー、デザインリサーチャー、アソシエイトマネジャー
+                </div>
+              </div>
+
+              <div class="row work-experience-item">
+                <div class="col-4 work-experience-details">2020年1月 - 2021年5月</div>
+                <div class="col-8 work-experience-details">
+                    <a href="https://unifa-e.com/" target="_blank" rel="noopener noreferrer">ユニファ株式会社</a><br>デザイン＆プロダクトマーケティング部<br>新規事業企画
+                </div>
+              </div>
+
+              <div class="row work-experience-item">
+                <div class="col-4 work-experience-details">2015年5月 - 2019年6月</div>
+                <div class="col-8 work-experience-details">
+                    <a href="https://www.sri.com/research/future-concepts-division/" target="_blank" rel="noopener noreferrer">Palo Alto Research Center (PARC)</a><br>Innovation Services Group<br>Researcher
+                </div>
+              </div>
+
+              <p class="py-3">そのほか、慶應義塾大学文学部非常勤講師、日本学術振興会特別研究員DC2など。</p>
+            </div>            
+          </div>
+      </section>
+
+      <section class="summary-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>サマリ</h2>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="summary-content mb-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                    <h4>個人ミッション</h4>
+                    <p>「移行と適応をやわらかに」</p>
+                    <p>生成AIの出現などもあり、移行と適応の機会がますます増える時代に入りつつあります。<br>その中でも個々人がなるべく健やかに過ごせるよう、移行と適応をやわらかにしていきたいです。</p>
+                    <h4>これまでしてきたこと</h4>
+                    <p>エスノグラフィ(活動の観察)のビジネス応用をコアにしてきました。<br>直近5年間は、デジタルプロダクトの文脈で、エスノグラフィを応用したデザインリサーチを元にした探索・企画、それらをしやすい環境作りを、多職種と協働して行なってきました。</p>
+                    <p>リサーチ実務については2022年12月にリリースされた<a href="https://support.freee.co.jp/hc/ja/articles/12527153459737" target="_blank" rel="noopener noreferrer">freee会計「修正待ちリスト」</a>の企画、リサーチ環境については(現在進行形ではありますが)現職UbieでのResearchOps整備が、それぞれわかりやすい例だと思っています。</p>
+                    <h4>コアスキル</h4>
+                    <p>コアスキルは「エスノグラフィを応用したデザインリサーチとアイデア形成」と「リサーチの教育やResearchOpsづくり」です。</p>
+                    <p>デザインリサーチは、以下の種別で理解しています (もちろん実践の中では重なり合うこともあります)。</p>
+                    <ul>
+                        <li>マーケティング寄りのリサーチ。つまり、注力すべき領域(機会領域)の特定と輪郭付けを行なうリサーチ</li>
+                        <li>プロダクト寄りのリサーチ。つまり、問題やソリューションの具体化のためのリサーチ</li>
+                    </ul>
+                    <p>エスノグラフィは、世界で初めてエスノグラフィをビジネス応用した<a href="https://www.sri.com/research/future-concepts-division/" target="_blank" rel="noopener noreferrer">パロアルト研究所(PARC)</a>で身に着け、本流の一つを継いでいます。<br>パロアルト研究所は、PC、イーサネットなどの概念を世界で初めて創り、情報社会の基盤を築いたことで世界に知られています。</p>
+                    <h4>これからしたいこと</h4>
+                    <ul>
+                        <li>40代以降の人生を楽しくするサービスづくり</li>
+                        <li>生成AIを活用し、サービス開発において一人で担当する範囲を拡大すること。同じく拡大された人たちとのチーミング</li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="features-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>特長</h2>                      
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="features-content mb-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                     <ul>
+                        <li>実戦的で、プロジェクトマネジメントが得意</li>
+                        <li>エスノグラフィのほか、デザインリサーチは定性・定量ひと通り実戦レベルでできる</li>
+                        <li>生成AIの活用が進んでいる。Google Apps Scriptを使った業務ツール作成など</li>
+                        <li>他職種との協創が得意</li>
+                        <li>多様な環境での経験がある</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="language-header section-bg mb-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-1">
+                    <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                </div>
+                <div class="col-11 pt-1">
+                    <h2>言語</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="language-content mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">                  
+                  <ul>
+                    <li>日本語：母語</li>
+                    <li>英語：第2言語。ビジネスにおける意思疎通に問題がないくらい</li>
+                    <li>台湾華語：第3言語。2024年の中盤から勉強を始め、TOCFL BandAを目指すくらいです</li>                                        
+                  </ul>       
+                </div>
+            </div>
+        </div>
+    </section>
+  
+      <section class="recent-activities-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>近年の代表的な記事・登壇</h2>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="recent-activities-content mb-3">
+          <div class="container">
+              <div class="row">
+                <div class="col-8">
+                    <iframe class="note-embed" src="https://note.com/embed/notes/n0f98eb519090" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe><script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+                </div>
+                <div class="col-4">
+                    <p class="mb-3">2025年現在の視点から振り返ると、リサーチの説明や表現の仕方はかなり過渡期な感じがしますが、全体的なスタンスは変わっていません。</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <iframe class="note-embed" src="https://note.com/embed/notes/n19cff0df55d5" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe><script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+                </div>
+                <div class="col-4">
+                    <p class="mb-3">こちらは最新の認識に近いです。</p>
+                </div>
+            </div>
+          </div>
+      </section>
+  
+      <section class="side-projects-header section-bg mb-3">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-1">
+                      <img src="img/section_elephant_fuku.png" alt="elephant symbol" class="main-image">
+                  </div>
+                  <div class="col-11 pt-1">
+                      <h2>副業</h2>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="side-projects-content mb-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <p>月2〜4時間程度の「デザインリサーチの相談に乗ります」という副業をしています。<br>もし需要がございましたら、条件や支援実績など共有いたしますので、上の連絡先から連絡くださいませ。</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
+    <div id="footer-container"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>
