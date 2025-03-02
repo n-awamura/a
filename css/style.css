@@ -37,19 +37,14 @@ body {
 }
 
 /* ヘッダー固定用のスタイル */
-.fixed-header {
-    position: fixed; /* 固定 */
+.sticky-header {
+    position: sticky; /* stickyに変更
     top: 0;        /* 上端に配置 */
-    left: 0;       /* 左端に配置 */
-    width: 100%;    /* 幅を100%に */
+    /* left: 0;       leftは不要 */
+    /* width: 100%;    widthは不要 */
     z-index: 1000;  /* 他の要素より前面に */
-    /*background-color: var(--light-blue-gray);  bodyに背景色があるなら不要 */
-    /* border-bottom: 1px solid var(--border-color); bodyに背景色があるなら不要*/
-}
-
-/* メインコンテンツに上部の余白を追加 (ヘッダーと重ならないように) */
-body > main.main-text { /* body直下のmainにのみ適用 */
-    padding-top: 148px; /* ヘッダーの高さ + 余白 + mb-5相当の値 (必要に応じて調整) */
+    background-color: var(--light-blue-gray); /* bodyに背景色があるなら不要 */
+    /* border-bottom: はheader-border-bottomで指定済み*/
 }
 
 /* ナビゲーション */
@@ -89,21 +84,14 @@ main {
 .main-image {
     max-height: 40px;
     width: auto;
+    animation-play-state: running;
+    display: block; /* インライン要素からブロック要素に変更 */
+    margin-bottom: 0.5rem; /* 必要に応じて、画像の下に余白を追加 */
 }
 
 .main-text {
     font-family: var(--font-family-noto-sans-jp);
     color: var(--main-text-color);
-}
-
-.work-experience-list {
-    /* border: 1px solid #dee2e6;  枠線が必要な場合 */
-}
-
-.work-experience-item {
-  border-bottom: 1px solid #dee2e6; /* 行の間の区切り線 */
-  padding-top: 0.5rem; /* 見やすいようにパディングを追加 */
-  padding-bottom: 0.5rem;
 }
 
 .bg-very-light-blue-gray {
@@ -137,16 +125,10 @@ main.main-text a:hover {
     background-color: #f0f0f0;
     /* 必要に応じて色を変更 */
 }
-
-.life-image {
-    max-height: 160px;
-    width: 160px;
+/* メインコンテンツの上部マージンは不要に */
+body > main.main-text {
+  margin-top: 3rem;
 }
-
-.note-text {
-    font-size: 0.8rem;
-}
-
 /* フッター */
 .footer {
    /* padding-bottom: 200px;削除 */
@@ -210,12 +192,40 @@ main.main-text a:hover {
 
 .shake {
     animation: shake 0.5s;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-play-state: running;
     /* アニメーションを実行 */
 }
 
-/* 初期状態ではアニメーションを停止（JSで制御）*/
-img {
-    animation-play-state: paused;
+/*職歴*/
+.work-experience-item {
+  border-bottom: 1px solid #dee2e6; /* 行の間の区切り線 */
+  padding-top: 0.5rem; /* 見やすいようにパディングを追加 */
+  padding-bottom: 0.5rem;
+}
+
+/* 最初の要素の上にはborderをつけない */
+.work-experience-item:first-child {
+    border-top: none;
+}
+
+.work-experience-term {
+    font-weight: bold; /* 期間は太字 */
+}
+
+/* レスポンシブ対応 (小さい画面では縦並び) */
+@media (max-width: 767px) { /* Bootstrapの sm ブレークポイント (例) */
+  .section-header .row {
+      flex-direction: column; /* 列を縦並びにする */
+      align-items: center; /* 中央揃え */
+  }
+  .work-experience-item {
+    flex-direction: column;
+  }
+  .work-experience-term{
+    width: 100%;
+  }
+  .work-experience-details{
+    width: 100%;
+  }
 }
