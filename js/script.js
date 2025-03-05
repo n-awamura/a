@@ -105,11 +105,11 @@ function startShakeAnimation() {
       }, 1500); // 1500ミリ秒後 (1.5秒後) にクラスを削除
     }
   
-    // 最初の実行
-    shakeAndPulse();
+    // 最初の実行を15秒後に遅延させる
+    setTimeout(shakeAndPulse, 15000);
   
-    // 15秒ごとに実行
-    setInterval(shakeAndPulse, 15000); // 15000ミリ秒 (15秒) ごとに実行
+    // その後、15秒ごとに実行
+    setInterval(shakeAndPulse, 15000);
   }
 
 
