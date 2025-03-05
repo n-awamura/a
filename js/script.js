@@ -92,19 +92,24 @@ TextAnimator.checkAllComplete = () => {
 
 // 揺れアニメーション開始関数
 function startShakeAnimation() {
-  const imageElement = document.getElementById("myImage");
-  if (!imageElement) {
-      console.error("ID 'myImage' を持つ要素が見つかりません。");
-      return;
+    const imageElement = document.getElementById("myImage");
+    if (!imageElement) {
+        console.error("ID 'myImage' を持つ要素が見つかりません。");
+        return;
+    }
+  
+    function shakeImage() {
+      // shakeクラスを削除し、shake-and-pulseクラスを付与
+        imageElement.classList.remove("shake");
+        imageElement.classList.add("shake-and-pulse"); // 揺れ+拡大縮小クラス
+        setTimeout(() => {
+            imageElement.classList.remove("shake-and-pulse"); // アニメーション終了後、クラスを削除
+            imageElement.classList.add("shake");
+        }, 500); // 0.5秒後 (shake アニメーションの1回分の時間)
+    }
+    //imageElement.style.animationPlayState = "running";  // 不要 (shake-and-pulse クラスで制御)
+    setInterval(shakeImage, 15000);
   }
-
-  function shakeImage() {
-      imageElement.classList.add("shake");
-      setTimeout(() => { imageElement.classList.remove("shake"); }, 500);
-  }
-  imageElement.style.animationPlayState = "running";
-  setInterval(shakeImage, 15000);
-}
 
 
 document.addEventListener("DOMContentLoaded", function() {

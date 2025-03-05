@@ -150,57 +150,45 @@ main.main-text a:hover {
     font-family: var(--font-family-montserrat);
 }
 
-/* アニメーション */
+/* 揺れアニメーション (変更なし) */
 @keyframes shake {
-    /* (省略: 前と同じ) */
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-
-    10% {
-        transform: translate(-1px, -2px) rotate(-1deg);
-    }
-
-    20% {
-        transform: translate(-3px, 0px) rotate(1deg);
-    }
-
-    30% {
-        transform: translate(3px, 2px) rotate(0deg);
-    }
-
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    50% {
-        transform: translate(-1px, 2px) rotate(-1deg);
-    }
-
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    70% {
-        transform: translate(3px, 1px) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate(-1px, -1px) rotate(1deg);
-    }
-
-    90% {
-        transform: translate(1px, 2px) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
-    }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/* 拡大縮小アニメーション (追加) */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* 元のサイズ */
+  }
+  50% {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+  }
+  100% {
+    transform: scale(1); /* 元のサイズ */
+  }
+}
 .shake {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
+    animation-play-state: running;
+    /* アニメーションを実行 */
+}
+
+/* 揺れ + 拡大縮小 を適用するクラス (追加) */
+.shake-and-pulse {
+  animation: shake 0.5s infinite, pulse 1s infinite; /* 2つのアニメーションを同時に適用 */
+  /*animation-iteration-count: infinite; infiniteはanimationでまとめて指定*/
+  /*animation-play-state: running;  animation-play-stateもanimationでまとめて指定できる*/
 }
 
 /* 職歴 */
@@ -244,8 +232,24 @@ main.main-text a:hover {
     margin-right: auto;
 }
 
-/* 個別の画像スタイル (必要に応じて) */
-/*
-#jtnc-image { }
-#ichihara-image { }
-*/
+
+
+.section-header-inner {
+    /* display: flex;  d-flexクラスで指定 */
+    /* align-items: center; align-items-centerクラスで指定 */
+  }
+  
+  .image-container {
+      width: 40px; /* アイコンの幅 (必要に応じて調整) */
+      margin-right: 10px; /* アイコンとテキストの間隔 (必要に応じて調整) */
+  }
+  .text-container{
+      flex-grow: 1; /*h2が見出しからはみ出ないように*/
+  }
+  
+  .section-header-inner h2 {
+    margin-top: 0;
+      margin-bottom: 0; /* h2 のデフォルトのマージンをリセット (必要に応じて) */
+      white-space: nowrap; /* タイトルを折り返さない */
+      overflow: hidden;   /*タイトルがはみ出た時に隠す*/
+  }
